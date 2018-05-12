@@ -1,18 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createLogger from 'vuex/dist/logger'
+import cards from './modules/cards'
 
 Vue.use(Vuex)
 
-const state = {
-  cards: []
-}
-
-const mutations = {}
-
-const actions = {}
+const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-  state,
-  mutations,
-  actions
+  modules: {
+    cards
+  },
+  plugins: debug ? [createLogger()] : []
 })

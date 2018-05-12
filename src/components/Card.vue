@@ -1,12 +1,21 @@
 <template>
-  <div class='card'>
-    <div class='card__title'></div>
-    <div class='card__description'></div>
+  <div class='card-list__item'>
+    <div class='card-list__title'>
+      {{ title }}
+    </div>
+    <div class='card-list__description'>
+      {{ description }}
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: [
+    'title',
+    'description'
+  ]
+}
 </script>
 
 <style lang='scss' scoped>
