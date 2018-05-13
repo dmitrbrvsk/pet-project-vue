@@ -1,8 +1,9 @@
 <template>
   <div class='card-list'>
     <Card
-      v-for='card in cards'
-      :key='card.id'
+      v-for='(card, index) in cards'
+      :key='index'
+      :id='card.id'
       :title='card.title'
       :description='card.description'
     />
@@ -15,9 +16,11 @@
 
   export default {
     components: { Card },
-    computed: mapGetters({
-      cards: 'cards'
-    }),
+    computed: {
+      ...mapGetters([
+        'cards'
+      ]),
+    },
     methods: {
       ...mapActions([
         'getCards'

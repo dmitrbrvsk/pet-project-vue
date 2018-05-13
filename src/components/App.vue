@@ -1,8 +1,7 @@
 <template>
   <div class='app-layout'>
-    <router-view></router-view>
     <div class='content'>
-      <CardList/>
+      <router-view></router-view>
     </div>
   </div>
 </template>
