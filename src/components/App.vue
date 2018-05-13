@@ -6,10 +6,11 @@
   </div>
 </template>
 <script>
-import CardList from './CardList.vue'
 
 export default {
-  components: { CardList }
+  components: {
+    CardList: () => import('./CardList.vue')
+  }
 }
 </script>
 <style lang='scss' scoped>
