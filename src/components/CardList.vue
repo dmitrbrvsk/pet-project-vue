@@ -7,6 +7,7 @@
         :id='card.id'
         :title='card.title'
         :description='card.description'
+        :type='card.type'
       />
     </div>
     <Jumper v-if='!cards.length'></Jumper>
@@ -40,16 +41,22 @@
 <style lang='scss' scoped>
   .card-list {
     display: flex;
-    justify-content: space-between;
     flex-flow: row wrap;
-    width: 800px;
+    max-width: 880px;
+    margin-top: 50px;
+  }
 
-    &__item {
-      width: 200px;
-      height: 100px;
-      border-radius: 4px;
-      border: 1px solid #f5f5f7;
-
+  @media only screen and (max-width: 1024px) {
+    .card-list {
+      max-width: 600px;
+      justify-content: center;
     }
   }
+
+  @media only screen and (max-width: 480px) {
+    .card-list {
+      max-width: 400px;
+    }
+  }
+
 </style>
