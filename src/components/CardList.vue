@@ -1,21 +1,26 @@
 <template>
-  <div class='card-list'>
-    <Card
-      v-for='(card, index) in cards'
-      :key='index'
-      :id='card.id'
-      :title='card.title'
-      :description='card.description'
-    />
+  <div class='card-list__container'>
+    <div v-if='cards.length' class='card-list'>
+      <Card
+        v-for='(card, index) in cards'
+        :key='index'
+        :id='card.id'
+        :title='card.title'
+        :description='card.description'
+      />
+    </div>
+    <Jumper v-if='!cards.length'></Jumper>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
   import Card from './Card.vue'
+  import { Jumper } from 'vue-loading-spinner'
+
 
   export default {
-    components: { Card },
+    components: { Card, Jumper },
     computed: {
       ...mapGetters([
         'cards'
