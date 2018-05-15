@@ -4,10 +4,7 @@
       <Card
         v-for='(card, index) in cards'
         :key='index'
-        :id='card.id'
-        :title='card.title'
-        :description='card.description'
-        :type='card.type'
+        :card='card'
       />
     </div>
     <Jumper v-if='!cards.length'></Jumper>
@@ -42,13 +39,13 @@
   .card-list {
     display: flex;
     flex-flow: row wrap;
-    max-width: 880px;
+    max-width: 950px;
     margin-top: 50px;
   }
 
   @media only screen and (max-width: 1024px) {
     .card-list {
-      max-width: 600px;
+      max-width: 700px;
       justify-content: center;
     }
   }
