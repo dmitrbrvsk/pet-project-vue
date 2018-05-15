@@ -9,7 +9,3 @@
     components: { CardList }
   }
 </script>
-
-<style>
-
-</style>

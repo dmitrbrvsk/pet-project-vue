@@ -13,9 +13,8 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import Card from './Card.vue'
   import { Jumper } from 'vue-loading-spinner'
-
+  import Card from './Card.vue'
 
   export default {
     components: { Card, Jumper },
@@ -41,19 +40,15 @@
     flex-flow: row wrap;
     max-width: 950px;
     margin-top: 50px;
-  }
 
-  @media only screen and (max-width: 1024px) {
-    .card-list {
+    @media only screen and (max-width: 1024px) {
       max-width: 700px;
       justify-content: center;
     }
-  }
 
-  @media only screen and (max-width: 480px) {
-    .card-list {
+    @media only screen and (max-width: 480px) {
+      margin-top: 10px;
       max-width: 400px;
     }
   }
-
 </style>

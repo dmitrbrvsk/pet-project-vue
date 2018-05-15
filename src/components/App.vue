@@ -5,14 +5,15 @@
     </div>
   </div>
 </template>
-<script>
 
-export default {
-  components: {
-    CardList: () => import('./CardList.vue')
+<script>
+  export default {
+    components: {
+      CardList: () => import('./CardList.vue')
+    }
   }
-}
 </script>
+
 <style lang='scss' scoped>
   .content {
     display: flex;

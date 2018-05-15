@@ -1,8 +1,8 @@
 <template>
   <router-link
     :to="{ name: 'card', params: { id: card.id } }"
-    :class="{'card-list__item_big': card.type == 'double'}"
-    :style="{ 'backgroundImage': `url('${card.image_url}')` }"
+    :class="{ 'card-list__item_big': card.type == 'double' }"
+    :style="{ 'backgroundImage': `url(${card.image_url})` }"
     class='card-list__item'
   >
     <div class='card-list__header'>
@@ -30,6 +30,8 @@ export default {
   $mobile-width-card: 95%;
 
   .card-list {
+    margin: 0 10px;
+
     &__header {
       padding: 10px;
       background-color: hsla(0,0%,7%,.5);
@@ -73,13 +75,22 @@ export default {
         width: $double-width-card;
       }
 
+      @media only screen and (max-width: 1024px) {
+        max-width: $width-card - 10px;
+
+        &_big {
+          max-width: $double-width-card;
+        }
+      }
+
       @media only screen and (max-width: 480px) {
         width: $mobile-width-card;
+        max-width: initial;
         min-width: 300px;
         margin: 0 0 10px 0;
 
         &_big {
-          width: $mobile-width-card;
+          max-width: $mobile-width-card;
         }
       }
     }
